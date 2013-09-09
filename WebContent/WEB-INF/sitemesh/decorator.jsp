@@ -83,40 +83,37 @@
 						// 이미 로그인 한 상태
 						if (response.status === 'connected') {
 							alert("connected");
+
 						}
-						// 로그인 안한 상태
-						else {
-							alert("login");
-							FB.login(function(response) {
-								if (response.authResponse) {
-									var id;
-									var name;
-									
+
+						alert("login");
+						FB.login(function(response) {
+							if (response.authResponse) {
+								var id;
+								var name;
+								name = response.name;
+								id = response.authResponse.userID;
+								//100003020043827
+								FB.api('/me', function(response) {
 									name = response.name;
-									id = response.authResponse.userID;
-									//100003020043827
-									
-									FB.api('/me', function(response) {
-										msg.innerHTML = response.name + ' HI!!';
-										name = response.name;
-										// id와 이름을 전송
-										$.ajax({
-											type:"POST", //"POST"
-											url:"login.do",
-											data:"id="+id+"&name="+name,
-											success: function(data){
-												alert(name+"님 환영합니다.");
-												$("img[alt=login]").hide();
-												$("img[alt=logout]").show();
-											},
-											error:function(jqXHR,textStatus,errorThrown){
-												alert("에러");
-											}
-										});
+									// id와 이름을 전송
+									$.ajax({
+										type:"POST", //"POST"
+										url:"login.do",
+										data:"id="+id+"&name="+name,
+										success: function(data){
+											alert(name+"님 환영합니다.");
+											$("img[alt=login]").hide();
+											$("img[alt=logout]").show();
+										},
+										error:function(jqXHR,textStatus,errorThrown){
+											alert("에러");
+										}
 									});
-								}
-							});
-						}
+								});
+							}
+						});
+
 					});
 				});
 			});
@@ -124,7 +121,6 @@
 			$(function(){
 				$("img[alt=logout]").click(function(e){
 					FB.logout(function(response) {
-						msg.innerHTML = "logout";
 						alert("Bye");
 						$("img[alt=logout]").hide();
 						$("img[alt=login]").show();
