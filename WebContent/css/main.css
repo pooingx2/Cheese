@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+
+#mainWrapper{
+	width : 900px;
+	height : 800px;
+}
+
+img[alt=main]{
+	display: block; 
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+#search{
+	width : 900px;
+	height : 40px;
+	margin-top : 10px;
+	margin-bottom : 10px;
+	padding-top : 10px;
+	padding-bottom : 10px;
+}
+
+#search>ul>li {
+	height : 38px;
+}
+
+#search #searchBar {
+	margin-right : 10px;
+}
+
+#searchBar>ul>li {
+	height : 38px;
+}
+
+#gallery {
+	width : 900px;
+	height : 450px;
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+#gallery>ul{
+	list-style:none; 
+}
+
+#gallery>ul>li{
+	width : 260px;
+	height : 200px;
+	float : left;
+	margin : 5px;
+	border:1px solid #ddd;
+}
+
+#gallery>ul #myCarousel .photo{
+	margin-left : auto;
+	margin-right : auto;
+	height : 170px;
+}
+
+#gallery>ul .carousel-control{
+	width : 18px;
+	height : 38px;
+}
+
+#gallery>ul #title{
+	padding : 5px;
+	width : 250px;
+	height : 20px;
+	line-height:20px;
+	overflow: hidden;
+	white-space: nowrap; /* Don't forget this one */
+	text-overflow: ellipsis;
+}
+
+#gallery>ul #title .alert{
+	height : 10px;
+}
+
+
+.pagination{
+	width : 900px;
+	heigth : 50px;
+}
+
+
