@@ -76,8 +76,9 @@ public class MainController {
 				//Handle file content - multipartFile.getInputStream()
 				System.out.println(fileName);
 				try {
-//					File file = new File("D:\\Study\\SSM\\workspace\\Papaya\\WebContent\\gallery"+fileName);
-					File file = new File("D:\\"+fileName);
+					File file = new File("D:\\Study\\SSM\\workspace\\Cheese\\WebContent\\gallery\\"+fileName);
+//					File file = new File("D:\\"+fileName);
+					System.out.println(file.getAbsolutePath());
 					BufferedOutputStream buf = new BufferedOutputStream(new FileOutputStream(file));
 					buf.write(multipartFile.getBytes());
 					System.out.println("save the file");

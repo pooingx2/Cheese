@@ -5,12 +5,41 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="/Cheese/css/main.css" />
+	
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+		window.onload = function initialize() {
+			var mapOptions = {
+			    zoom: 2,
+			    //center: new google.maps.LatLng(-25.363882,131.044922),
+			    center: new google.maps.LatLng(37.5635,126.9753),
+			    mapTypeId: google.maps.MapTypeId.ROADMAP
+		 	};
+			var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+			google.maps.event.addListener(map, 'click', function(e) {
+			  placeMarker(e.latLng, map);
+			});
+		}
+		function placeMarker(position, map) {
+			var marker = new google.maps.Marker({
+			  position: position,
+			  map: map
+			});
+			console.log(position.jb);
+			console.log(position.kb);
+			map.panTo(position);
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+	
 </head>
 <body>
 <div>
 
 </div>
 	<div id="mainWrapper">
+	
+		<div id="map-canvas" style="width:900px;height:500px;"></div>
 		<img id="mainImg" src="/Cheese/img/main.png" alt="main" >
 		
 		<div id="search">

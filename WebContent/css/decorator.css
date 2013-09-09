@@ -1,10 +1,14 @@
 @CHARSET "UTF-8";
 
 img[alt=login]{
+	width : 30px;
+	height : 30px;
 	padding : 0px !important;
 }
 
 img[alt=logout]{
+	width : 30px;
+	height : 30px;
 	padding : 0px !important;
 }
 

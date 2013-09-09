@@ -82,11 +82,10 @@
 					FB.getLoginStatus(function(response) {
 						// 이미 로그인 한 상태
 						if (response.status === 'connected') {
-							alert("connected");
+							alert("Already login");
 
 						}
 
-						alert("login");
 						FB.login(function(response) {
 							if (response.authResponse) {
 								var id;
