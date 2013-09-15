@@ -29,7 +29,7 @@
 			console.log(position.kb);
 			map.panTo(position);
 		}
-		google.maps.event.addDomListener(window, 'load', initialize);
+		//google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
 	
 </head>
@@ -100,7 +100,7 @@
 				    <li><a href="#">5</a></li>
 				    <li><a href="#">&raquo;</a></li>
 				</ul>
-			</div>
+		</div>
 	</div>
 </body>
 </html>

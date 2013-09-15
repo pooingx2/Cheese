@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+#uploadWrapper{
+	width : 900px;
+	height : 800px;
+}
+
+img[alt=upload]{
+	width : 100px;
+	height : 100px;
+	padding : 0px !important;
+}
+
+.miniphoto {
+  height: 75px;
+  border: 1px solid #000;
+  margin: 10px 5px 0 0;
+}

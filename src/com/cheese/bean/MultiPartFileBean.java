@@ -1,10 +1,10 @@
-package com.papaya.model;
+package com.cheese.bean;
 
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class FileUploadForm {
+public class MultiPartFileBean  {
 
 	private List<MultipartFile> files;
 
