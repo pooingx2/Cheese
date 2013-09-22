@@ -5,8 +5,8 @@
 <configuration>
 	<properties resource="com/cheese/dbconfig/database.properties"/>
 	<typeAliases>
-	   <typeAlias type="com.cheese.bean.User" alias="User"/>
-	   <!--  <package name="com/cheese/bean"/>-->
+    	<package name="com/cheese/bean"/>
+		<!-- <typeAlias type="com.cheese.bean.User" alias="User"/>  -->
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -21,6 +21,10 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/cheese/mapper/UserMapper.xml" />
+		<mapper resource="com/cheese/mapper/GalleryMapper.xml" />
+		<mapper resource="com/cheese/mapper/PhotoMapper.xml" />
+		<!--<mapper class="com.cheese.mapper.UserMapper"/>
+		<mapper class="com.cheese.mapper.GalleryMapper"/> -->
 
 	</mappers>
 </configuration>

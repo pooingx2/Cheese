@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.cheese.mapper.GalleryMapper">
+
+	<resultMap id="gallery" type="com.cheese.bean.Gallery">
+	</resultMap>
+	
+	<insert id="insertGallery" parameterType="gallery">
+		INSERT INTO Gallery (gid,title,content,mapx,mapy,master)
+		VALUES(#{gid},#{title},#{content},#{mapx},#{mapy},#{master})
+		<selectKey keyProperty="gid" resultType="int" order="AFTER">  
+			select LAST_INSERT_ID()   
+		</selectKey>   
+	</insert>
+	
+	<select id="selectAllGallery" resultMap="gallery">
+		SELECT * FROM Gallery
+	</select>
+	
+</mapper>

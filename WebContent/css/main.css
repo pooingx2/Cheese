@@ -53,15 +53,9 @@ img[alt=main]{
 	border:1px solid #ddd;
 }
 
-#gallery>ul #myCarousel .photo{
-	margin-left : auto;
-	margin-right : auto;
-	height : 170px;
-}
-
-#gallery>ul .carousel-control{
-	width : 18px;
-	height : 38px;
+#myCarousel {
+	width : 500px;
+	height : 300px;
 }
 
 #gallery>ul #title{
@@ -74,14 +68,14 @@ img[alt=main]{
 	text-overflow: ellipsis;
 }
 
-#gallery>ul #title .alert{
-	height : 10px;
-}
-
-
 .pagination{
 	width : 900px;
 	heigth : 50px;
 }
 
+.photoBox {
+  height: 250px;
+  border: 1px solid #000;
+  padding: 10px 5px 0 0;
+}
 

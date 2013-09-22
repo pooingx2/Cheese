@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+textarea {
+   resize: none;
+}
+
 #uploadWrapper{
 	width : 900px;
 	height : 800px;
@@ -9,6 +13,50 @@ img[alt=upload]{
 	width : 100px;
 	height : 100px;
 	padding : 0px !important;
+	float : right;
+}
+
+#map-canvas {
+	width : 450px;
+	height : 350px;
+}
+
+
+#westDiv {
+	width : 450px;
+	height : 400px;
+	float : left;
+	font-size : 20px;
+}
+
+#eastDiv {
+	width : 400px;
+	height : 400px;
+	float : right;
+	font-size : 20px;
+}
+
+#eastDiv #title {
+	width : 300px;
+}
+
+#eastDiv #content {
+	width : 300px;
+}
+
+#eastDiv #files {
+	width : 300px;
+	margin-top : 50px;
+}
+
+#northDiv {
+	width : 900px;
+	height : 400px;
+}
+
+#southDiv {
+	width : 900px;
+	height : 300px;
 }
 
 .miniphoto {

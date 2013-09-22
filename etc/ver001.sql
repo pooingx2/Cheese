@@ -6,6 +6,7 @@ CREATE TABLE User (
     name VARCHAR(20) NOT NULL,
     email VARCHAR(50) NOT NULL,
 	type VARCHAR(20) NOT NULL,
+	money INT NOT NULL,
 
     PRIMARY KEY (uid)
 )DEFAULT CHARSET=utf8;
@@ -15,8 +16,8 @@ CREATE TABLE Gallery (
 	nation VARCHAR(20) NOT NULL,
     title VARCHAR(100) NOT NULL,
     content BLOB NOT NULL,
-	mapx INTEGER NOT NULL,
-	mapy INTEGER NOT NULL,
+	mapx DOUBLE NOT NULL,
+	mapy DOUBLE NOT NULL,
     master VARCHAR(20) NOT NULL,
 
     PRIMARY KEY (gid),

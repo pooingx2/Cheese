@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.cheese.mapper.PhotoMapper">
+
+	<resultMap id="photo" type="com.cheese.bean.Photo">
+	</resultMap>
+	
+	<insert id="insertPhoto" parameterType="photo">
+		INSERT INTO Photo (pid,path,count,gallery)
+		VALUES(#{pid},#{path},#{count},#{gallery})
+		<selectKey keyProperty="pid" resultType="int" order="AFTER">  
+			select LAST_INSERT_ID()
+		</selectKey>   
+	</insert>
+	
+	<select id="selectAllPhoto" resultMap="photo">
+		SELECT * FROM Photo
+	</select>
+	
+	<select id="selectGalleryPhoto" parameterType="int" resultMap="photo">
+		SELECT * FROM Photo
+		WHERE gallery = #{gallery}
+	</select>
+	
+</mapper>

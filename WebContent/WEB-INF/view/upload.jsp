@@ -1,4 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -18,7 +21,7 @@
 			var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 			google.maps.event.addListener(map, 'click', function(e) {
 
-					placeMarker(e.latLng, map);
+				placeMarker(e.latLng, map);
 
 			});
 		}
@@ -31,8 +34,8 @@
 			  position: position,
 			  map: map
 			});
-			$("#markerX").val(position.qb);
-			$("#markerY").val(position.pb);
+			$("#markerX").val(position.pb);
+			$("#markerY").val(position.ob);
 			map.panTo(position);
 		}
 		
@@ -61,56 +64,62 @@
 </head>
 <body>
 <body>
-	<div id = "galleryWrapper">
-		<h1>Spring Multiple File Upload example</h1>
+	<div id = "uploadWrapper">
+		<div id="northDiv">
+			<div id="westDiv">
+				어디서 찍었나요?<br/><br/>
+				<div id="map-canvas"></div>
+			</div>
+			
+			<div id="eastDiv">
+				<br/><br/>
+				<form:form method="post" action="/Cheese/upload.do" id="uploadForm"
+						modelAttribute="MultiPartFileBean" enctype="multipart/form-data">
+					<input type="text" name="markerX" id="markerX" />
+					<input type="text" name="markerY" id="markerY" />
+					
+					제목 :
+					<input type="text" name="title" id="title" class="span5"/> <br/>
+					
+					내용 : 
+					<textarea name="content" id="content" class="span5" rows="5" ></textarea> <br/>
+					
+					<input type="file" name="files" id="files" accept="image/*" multiple />
+				</form:form>				
+				<a class="button" href="#">
+					<img src="/Cheese/img/uploadBtn1.jpg" alt="upload"/>
+				</a>
+			</div>
+		</div>
 		
-		<form:form method="post" action="/Cheese/upload.do" id="uploadForm"
-				modelAttribute="MultiPartFileBean" enctype="multipart/form-data">
-		
-			<p>Select files to upload. Press Add button to add more file inputs.</p>
-
-			<br/>
-			<input id="markerX" type="text" name="markerX" />
-			<input id="markerY" type="text" name="markerY" />
-			<input id="files" type="file" name="files" multiple />
+		<div id= "southDiv">
 			<output id="list"></output>
-		</form:form>
-
-
-		<a class="button" href="#">
-			<img src="/Cheese/img/uploadBtn1.jpg" alt="upload"/>
-		</a>
-
-
-		<div id="map-canvas" style="width:300px;height:300px;"></div>
+		</div>
 		
 		<script>
 			function handleFileSelect(evt) {
-			    var files = evt.target.files; // FileList object	
-			    // Loop through the FileList and render image files as thumbnails.
+				var files = evt.target.files; // FileList object	
 			    for (var i = 0, file; file = files[i]; i++) {
 			
-			      // Only process image files.
 					if (!file.type.match('image.*')) {
+						alert("Select image file");
 						continue;
 					}
-			
-					var reader = new FileReader();
-					// Closure to capture the file information.
-					reader.onload = (function(theFile) {
-						return function(e) {
-				          // Render thumbnail.
-							var span = document.createElement('span');
-							span.innerHTML = ['<img class="miniphoto" src="', e.target.result,
-				                            '" title="', escape(theFile.name), '"/>'].join('');
-							document.getElementById('list').insertBefore(span, null);
-						};
-					})(file);
-		
-					// Read in the image file as a data URL.
-					reader.readAsDataURL(file);
-
-					//console.log(files);
+					else {
+						var reader = new FileReader();
+						// Closure to capture the file information.
+						reader.onload = (function(theFile) {
+							return function(e) {
+					          // Render thumbnail.
+								var span = document.createElement('span');
+								span.innerHTML = ['<img class="miniphoto" src="', e.target.result,
+					                            '" title="', escape(theFile.name), '"/>'].join('');
+								document.getElementById('list').insertBefore(span, null);
+							};
+						})(file);
+						// Read in the image file as a data URL.
+						reader.readAsDataURL(file);
+					}
 				}
 			}
 		
