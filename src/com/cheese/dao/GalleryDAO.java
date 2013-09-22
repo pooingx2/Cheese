@@ -6,10 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.cheese.bean.Gallery;
-import com.cheese.bean.Photo;
 import com.cheese.dbconfig.SqlSessionManager;
 import com.cheese.mapper.GalleryMapper;
-import com.cheese.mapper.PhotoMapper;
 
 
 public class GalleryDAO {
@@ -41,5 +39,19 @@ public class GalleryDAO {
 			session.close();
 		}
 		return list;
+	}
+	
+	public Gallery selectOneGallery(int gid){
+		SqlSession session = sqlSessionFactory.openSession();
+		Gallery gallery=null;
+		try{
+			GalleryMapper mapper = session.getMapper(GalleryMapper.class);
+			gallery = mapper.selectOneGallery(gid);
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return gallery;
 	}
 }

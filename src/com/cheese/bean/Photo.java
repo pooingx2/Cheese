@@ -8,7 +8,6 @@ public class Photo implements Serializable{
 
 	private int pid;
 	private String path;
-	private int count;
 	private int gallery;
 	
 	public Photo(){
@@ -28,14 +27,6 @@ public class Photo implements Serializable{
 
 	public void setPath(String path) {
 		this.path = path;
-	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
 	}
 
 	public int getGallery() {

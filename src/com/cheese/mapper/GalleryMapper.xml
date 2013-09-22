@@ -9,8 +9,8 @@
 	</resultMap>
 	
 	<insert id="insertGallery" parameterType="gallery">
-		INSERT INTO Gallery (gid,title,content,mapx,mapy,master)
-		VALUES(#{gid},#{title},#{content},#{mapx},#{mapy},#{master})
+		INSERT INTO Gallery (gid,title,content,count,mapx,mapy,master)
+		VALUES(#{gid},#{title},#{content},#{count},#{mapx},#{mapy},#{master})
 		<selectKey keyProperty="gid" resultType="int" order="AFTER">  
 			select LAST_INSERT_ID()   
 		</selectKey>   
@@ -20,4 +20,9 @@
 		SELECT * FROM Gallery
 	</select>
 	
+	<select id="selectOneGallery" parameterType="int" resultMap="gallery">
+		SELECT * FROM Gallery
+		WHERE gid = #{gid}
+	</select>
+
 </mapper>

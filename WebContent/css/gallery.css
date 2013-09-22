@@ -20,6 +20,7 @@ img[alt=upload]{
 	width : 450px;
 	height : 350px;
 }
+
 #map-canvas img{
 	max-width: inherit;
 }

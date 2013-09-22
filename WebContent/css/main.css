@@ -13,69 +13,56 @@ img[alt=main]{
 	margin-right: auto;
 }
 
-#search{
-	width : 900px;
-	height : 40px;
-	margin-top : 10px;
-	margin-bottom : 10px;
-	padding-top : 10px;
-	padding-bottom : 10px;
+#map-canvas {
+	width:900px;
+	height:500px;
 }
 
-#search>ul>li {
-	height : 38px;
+#map-canvas img{
+	max-width: inherit;
 }
 
-#search #searchBar {
-	margin-right : 10px;
+#miniGallery {
+	width:310px;
+	height:210px;
 }
-
-#searchBar>ul>li {
-	height : 38px;
-}
-
-#gallery {
-	width : 900px;
-	height : 450px;
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-#gallery>ul{
-	list-style:none; 
-}
-
-#gallery>ul>li{
-	width : 260px;
-	height : 200px;
-	float : left;
-	margin : 5px;
-	border:1px solid #ddd;
-}
-
 #myCarousel {
-	width : 500px;
-	height : 300px;
+	width:300px;
+	height:200px;
+	border: 2px solid #AAA;	
 }
 
-#gallery>ul #title{
-	padding : 5px;
-	width : 250px;
-	height : 20px;
-	line-height:20px;
-	overflow: hidden;
-	white-space: nowrap; /* Don't forget this one */
-	text-overflow: ellipsis;
+#carouselBtn {
 }
 
-.pagination{
-	width : 900px;
-	heigth : 50px;
+#miniGallery #zoom{
+	width:30px;
+	height:30px;
+}
+
+.carousel-inner {
+}
+
+.item{
 }
 
 .photoBox {
-  height: 250px;
-  border: 1px solid #000;
-  padding: 10px 5px 0 0;
+	width:300px;
+	height:200px;
 }
+
+.carousel-control{
+	height:20px;
+	width:20px;
+	margin-top:80px;
+}
+
+#carouselBtn #show{	
+	height:20px;
+	width:20px;
+	margin-left:120px;
+	margin-top:80px;
+}
+
+
 

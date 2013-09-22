@@ -13,9 +13,9 @@ CREATE TABLE User (
 
 CREATE TABLE Gallery (
     gid INTEGER NOT NULL AUTO_INCREMENT,
-	nation VARCHAR(20) NOT NULL,
     title VARCHAR(100) NOT NULL,
-    content BLOB NOT NULL,
+    content TEXT NOT NULL,
+    count INTEGER NOT NULL,
 	mapx DOUBLE NOT NULL,
 	mapy DOUBLE NOT NULL,
     master VARCHAR(20) NOT NULL,
@@ -27,7 +27,6 @@ CREATE TABLE Gallery (
 CREATE TABLE Photo (
     pid INTEGER NOT NULL AUTO_INCREMENT,
     path VARCHAR(100) NOT NULL,
-    count INTEGER NOT NULL,
     gallery INTEGER NOT NULL,
 
     PRIMARY KEY (pid),

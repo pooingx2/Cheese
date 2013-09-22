@@ -9,6 +9,7 @@ public class Gallery implements Serializable{
 	private int gid;
 	private String title;
 	private String content;
+	private int count;
 	private double mapx;
 	private double mapy;
 	private String master;
@@ -46,6 +47,13 @@ public class Gallery implements Serializable{
 		this.content = content;
 	}
 
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
 
 	public double getMapx() {
 		return mapx;

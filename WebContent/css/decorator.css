@@ -1,15 +1,39 @@
 @CHARSET "UTF-8";
 
+img[alt=logo]{
+	width : 40px;
+	height : 40px;
+	padding : 0px !important;
+}
+
 img[alt=login]{
-	width : 30px;
-	height : 30px;
+	width : 40px;
+	height : 40px;
 	padding : 0px !important;
 }
 
 img[alt=logout]{
-	width : 30px;
-	height : 30px;
+	width : 40px;
+	height : 40px;
 	padding : 0px !important;
+}
+
+.navbar .navbar-inner .brand {
+	padding : 5px !important;
+	font-size : 30px;
+	margin-right : 10px;
+}
+
+.nav li{
+	height : 50px;
+}
+
+.nav li a {
+	padding : 15px !important;
+}
+
+.selected {
+	background-color: #EEE;
 }
 
 .header-right li a{
@@ -21,6 +45,7 @@ img[alt=logout]{
 	width : 900px;
 	margin : 20px auto 20px auto;
 }
+
 #header {
 	width : 900px;
 	height : 50px;

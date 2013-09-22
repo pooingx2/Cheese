@@ -17,15 +17,31 @@
 	
 	<link rel="stylesheet" type="text/css" href="/Cheese/css/bootstrap.min.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/Cheese/css/decorator.css" media="all" />
-	<link rel="shortcut icon" href="/Cheese/img/Cheese-logo.png" />
+	<link rel="shortcut icon" href="/Cheese/img/logo.jpg" />
 
 	<script type="text/javascript">
-		$(function() {
+		$(function() {	
+
+			if(location.pathname == "/Cheese/main.do")
+				$(".navbar-inner>ul>li:eq(0)").addClass("active");
+			
+			else if(location.pathname == "/Cheese/upload.do")
+				$(".navbar-inner>ul>li:eq(1)").addClass("active");
+			
+
+			$(".navbar-inner>.linkList>li").mouseover(function(e){
+				$(this).addClass("selected");
+			});
+			
+			$(".navbar-inner>.linkList>li").mouseout(function() { 
+				$(this).removeClass("selected");
+			});
+	
 
 			FB.init({
 				appId : '406259369474422',	// App ID
-				//channelUrl : 'http://211.189.127.145:8080/Cheese',	// Channel File
-				channelUrl : 'http://192.168.0.5:8080/Cheese',	// Channel File
+				channelUrl : 'http://211.189.127.145:8080/Cheese',	// Channel File
+				//channelUrl : 'http://192.168.0.5:8080/Cheese',	// Channel File
 				status : true,	// check login status
 				cookie : true,	// enable cookies to allow the server to access the session
 				xfbml : true	// parse XFBML
@@ -97,24 +113,24 @@
 		<div id="header">
 			<div class="navbar">
 				<div class="navbar-inner">
-					<a class="brand" href="/Cheese/main.do">Cheese</a>
-					<ul class="nav">
-					
-							<li class="active"><a href="/Cheese/main.do">Home</a></li>
-							<c:choose>
-								<c:when test="${!(empty user)}">
-									<li><a href="/Cheese/upload.do">Upload</a></li>
-								</c:when>
-							</c:choose>
-							<li><a href="#">B</a></li>
-					
+					<a class="brand" href="/Cheese/main.do">
+						<img src="/Cheese/img/logo.jpg" alt="logo"/>
+						Cheese
+					</a>
+					<ul class="nav linkList">
+						<li><a href="/Cheese/main.do"><i class="icon-home"></i> Home</a></li>
+						<c:choose>
+							<c:when test="${!(empty user)}">
+								<li><a href="/Cheese/upload.do"><i class="icon-upload"></i> Upload</a></li>
+							</c:when>
+						</c:choose>
 					</ul>
 					<ul class="nav pull-right header-right">
 						<li>
 							<c:choose>
 								<c:when test="${empty user}">
 									<a class="button">
-										<img src="/Cheese/img/facebook-logo.png" alt="login"/>
+										<img src="/Cheese/img/facebookLogin.png" alt="login"/>
 									</a>
 								</c:when>
 								<c:otherwise>
@@ -123,7 +139,6 @@
 									</a>
 								</c:otherwise>
 							</c:choose>
-	
 						</li>
 					</ul>
 				</div>

@@ -9,8 +9,8 @@
 	</resultMap>
 	
 	<insert id="insertPhoto" parameterType="photo">
-		INSERT INTO Photo (pid,path,count,gallery)
-		VALUES(#{pid},#{path},#{count},#{gallery})
+		INSERT INTO Photo (pid,path,gallery)
+		VALUES(#{pid},#{path},#{gallery})
 		<selectKey keyProperty="pid" resultType="int" order="AFTER">  
 			select LAST_INSERT_ID()
 		</selectKey>   
