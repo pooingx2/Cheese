@@ -27,8 +27,8 @@ import com.cheese.dao.PhotoDAO;
 @Controller
 public class UploadController {
 	
-	//public final static String galleryPath = "D:\\Java\\workspace\\Cheese\\WebContent\\gallery";
-	public final static String galleryPath = "D:\\Study\\SSM\\workspace\\Cheese\\WebContent\\gallery";
+	public final static String galleryPath = "D:\\Java\\workspace\\Cheese\\WebContent\\gallery";
+	//public final static String galleryPath = "D:\\Study\\SSM\\workspace\\Cheese\\WebContent\\gallery";
 
 	@RequestMapping(value = "/upload.do", method = RequestMethod.GET)
 	public String getGallery(HttpServletRequest request, HttpServletResponse response) {

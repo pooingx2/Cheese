@@ -4,16 +4,9 @@ textarea {
    resize: none;
 }
 
-#uploadWrapper{
+#galleryWrapper{
 	width : 900px;
 	height : 800px;
-}
-
-img[alt=upload]{
-	width : 100px;
-	height : 100px;
-	padding : 0px !important;
-	float : right;
 }
 
 #map-canvas {
@@ -26,7 +19,7 @@ img[alt=upload]{
 }
 
 #westDiv {
-	width : 450px;
+	width : 460px;
 	height : 400px;
 	float : left;
 	font-size : 20px;
@@ -54,7 +47,7 @@ img[alt=upload]{
 
 #northDiv {
 	width : 900px;
-	height : 400px;
+	height : 500px;
 }
 
 #southDiv {
@@ -62,8 +55,17 @@ img[alt=upload]{
 	height : 300px;
 }
 
-.miniphoto {
-	height: 75px;
-	border: 1px solid #000;
-	margin: 10px 5px 0 0;
+#myCarousel {
+	width:900px;
+	height:500px;
+	border: 2px solid #AAA;	
+}
+
+.carousel-control{
+	margin-top:10px;
+}
+
+.photoBox {
+	width: 900px;
+	height: 500px;
 }

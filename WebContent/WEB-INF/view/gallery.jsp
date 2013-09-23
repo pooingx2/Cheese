@@ -14,7 +14,29 @@
 <body>
 <body>
 	<div id = "galleryWrapper">
-		<div id="northDiv">
+			
+		<div id= "northDiv">
+			<div id="miniGallery">
+				<div id="myCarousel" class="carousel slide">
+					<div class="carousel-inner">
+						<div class="active item">
+							<c:set var="first" value="${photoList[0].path}"/>
+							<img src="${photoList[0].path}" class="photoBox">
+						</div>
+						<c:forEach var="i" begin="1" end="${photoList.size()-1}" step="1">
+							<div class="item">
+								<img src="${photoList[i].path}" class="photoBox">
+							</div>
+						</c:forEach>
+					</div>
+					<div id="carouselBtn">
+						<a class="carousel-control left" href="#myCarousel" data-slide="prev"><h1><i class="icon-chevron-left icon-white"></i></h1></a>
+						<a class="carousel-control right" href="#myCarousel" data-slide="next"><h1><i class="icon-chevron-right icon-white"></i></h1></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="southDiv">
 			<div id="westDiv">
 				<div id="map-canvas"></div>
 			</div>
@@ -29,15 +51,12 @@
 				master : ${gallery.master} <br/><br/>
 	    		
 	    		photoList<br/>
+	    		length : ${photoList.size()}
 				<c:forEach items="${photoList}" var="item">
-		    		pid : "${item.pid}"<br/>
-		    		path : "${item.path}"<br/>
+		    		pid : ${item.pid}<br/>
+		    		path : ${item.path}<br/>
 				</c:forEach> 
-	
 			</div>
-		</div>
-		
-		<div id= "southDiv">
 		</div>
 	</div>
 </body>
